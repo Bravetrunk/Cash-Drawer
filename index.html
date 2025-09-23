@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>ระบบตรวจสอบลิ้นชักเงินสด - Tonkla</title>
 <style>
-/* All your existing styles remain the same, plus these additions: /
+/* All your existing styles remain the same, plus these additions: */
 * {margin: 0;padding: 0;box-sizing: border-box;-webkit-tap-highlight-color: transparent;}
 body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Kanit', sans-serif;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);min-height: 100vh;padding: 10px;animation: gradientShift 10s ease infinite;background-size: 200% 200%;}
 @keyframes gradientShift {0% { background-position: 0% 50%; }50% { background-position: 100% 50%; }100% { background-position: 0% 50%; }}
@@ -17,7 +17,7 @@ h2 {color: #555;margin: 15px 0;padding: 8px;background: #f8f9fa;border-radius: 8
 h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .date-info {text-align: center;font-size: clamp(0.8rem, 2.5vw, 1.1rem);color: #666;margin-bottom: 15px;}
 
-/ Navigation Tabs /
+/* Navigation Tabs */
 .nav-tabs {display: flex;gap: 10px;margin-bottom: 20px;border-bottom: 2px solid #e0e0e0;padding-bottom: 0;}
 .nav-tab {padding: 12px 20px;background: #f8f9fa;border: none;border-radius: 10px 10px 0 0;cursor: pointer;font-size: clamp(0.85rem, 2.5vw, 1rem);color: #666;transition: all 0.3s ease;position: relative;font-weight: 500;}
 .nav-tab.active {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);color: white;transform: translateY(-2px);}
@@ -26,14 +26,14 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .tab-content {display: none;animation: fadeIn 0.5s ease;}
 .tab-content.active {display: block;}
 
-/ Staff Input Section /
+/* Staff Input Section */
 .staff-section {margin: 15px 0;padding: 15px;background: #f8f9fa;border-radius: 10px;animation: fadeIn 0.8s ease;}
 .staff-input {display: flex;align-items: center;gap: 10px;flex-wrap: wrap;}
 .staff-input label {font-weight: 500;color: #555;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .staff-input input {flex: 1;min-width: 150px;padding: 10px;border: 2px solid #ddd;border-radius: 5px;font-size: clamp(0.9rem, 2.5vw, 1rem);transition: all 0.3s ease;}
 .staff-input input:focus {outline: none;border-color: #667eea;box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);}
 
-/ History Section Styles /
+/* History Section Styles */
 .history-controls {display: flex;gap: 10px;margin-bottom: 20px;flex-wrap: wrap;align-items: center;}
 .history-controls input, .history-controls select {padding: 10px;border: 2px solid #ddd;border-radius: 5px;font-size: clamp(0.85rem, 2.5vw, 1rem);transition: all 0.3s ease;}
 .history-controls input:focus, .history-controls select:focus {outline: none;border-color: #667eea;}
@@ -41,7 +41,7 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .btn-refresh:hover {transform: translateY(-2px);box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
 .btn-refresh:active {transform: scale(0.98);}
 
-/ History Stats Cards /
+/* History Stats Cards */
 .stats-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));gap: 15px;margin-bottom: 20px;}
 .stat-card {padding: 15px;background: white;border-radius: 10px;box-shadow: 0 2px 10px rgba(0,0,0,0.1);text-align: center;transition: all 0.3s ease;}
 .stat-card:hover {transform: translateY(-5px);box-shadow: 0 5px 20px rgba(0,0,0,0.15);}
@@ -54,7 +54,7 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .stat-card.warning {background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);color: white;}
 .stat-card.warning .stat-label {color: rgba(255,255,255,0.9);}
 
-/ History Table /
+/* History Table */
 .history-table-wrapper {overflow-x: auto;border-radius: 10px;box-shadow: 0 2px 10px rgba(0,0,0,0.1);margin-bottom: 20px;background: white;}
 .history-table {width: 100%;border-collapse: collapse;font-size: clamp(0.75rem, 2vw, 0.9rem);}
 .history-table thead {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);color: white;}
@@ -64,13 +64,13 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .history-table tbody tr:hover {background: #f8f9fa;transform: scale(1.01);}
 .history-table tbody tr:active {background: #e9ecef;}
 
-/ Status badges /
+/* Status badges */
 .status-badge {padding: 4px 10px;border-radius: 20px;font-size: clamp(0.7rem, 1.8vw, 0.85rem);font-weight: 500;display: inline-block;}
 .status-badge.over {background: #d4edda;color: #155724;}
 .status-badge.under {background: #f8d7da;color: #721c24;}
 .status-badge.exact {background: #d1ecf1;color: #0c5460;}
 
-/ Action buttons in table /
+/* Action buttons in table */
 .action-buttons {display: flex;gap: 5px;}
 .btn-action {padding: 5px 10px;border: none;border-radius: 5px;cursor: pointer;font-size: clamp(0.7rem, 1.8vw, 0.85rem);transition: all 0.3s ease;}
 .btn-view {background: #007bff;color: white;}
@@ -80,15 +80,15 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .btn-delete {background: #dc3545;color: white;}
 .btn-delete:hover {background: #c82333;}
 
-/ Empty state /
+/* Empty state */
 .empty-state {text-align: center;padding: 40px 20px;color: #999;}
 .empty-state-icon {font-size: 48px;margin-bottom: 10px;}
 .empty-state-text {font-size: clamp(0.9rem, 2.5vw, 1.1rem);}
 
-/ Loading spinner /
+/* Loading spinner */
 .loading-spinner {display: inline-block;width: 20px;height: 20px;border: 3px solid rgba(102, 126, 234, 0.3);border-radius: 50%;border-top-color: #667eea;animation: spin 1s ease-in-out infinite;}
 
-/ Modal for details view /
+/* Modal for details view */
 .modal {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 1000;animation: fadeIn 0.3s ease;}
 .modal.active {display: flex;align-items: center;justify-content: center;padding: 20px;}
 .modal-content {background: white;border-radius: 15px;padding: 25px;max-width: 500px;width: 100%;max-height: 80vh;overflow-y: auto;animation: slideInUp 0.3s ease;}
@@ -102,7 +102,7 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .detail-label {font-weight: 500;color: #666;font-size: clamp(0.8rem, 2vw, 0.95rem);}
 .detail-value {font-weight: 600;color: #333;font-size: clamp(0.8rem, 2vw, 0.95rem);text-align: right;}
 
-/ Edit form in modal /
+/* Edit form in modal */
 .edit-form {display: flex;flex-direction: column;gap: 15px;}
 .edit-form-group {display: flex;flex-direction: column;gap: 5px;}
 .edit-form-group label {font-weight: 500;color: #555;font-size: clamp(0.8rem, 2vw, 0.95rem);}
@@ -115,7 +115,7 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .btn-cancel {background: #6c757d;color: white;}
 .btn-cancel:hover {background: #5a6268;}
 
-/ Confirmation dialog styles /
+/* Confirmation dialog styles */
 .confirm-dialog {background: white;border-radius: 15px;padding: 25px;max-width: 400px;width: 100%;text-align: center;}
 .confirm-icon {font-size: 48px;margin-bottom: 15px;}
 .confirm-message {font-size: clamp(1rem, 2.5vw, 1.2rem);color: #333;margin-bottom: 20px;}
@@ -172,12 +172,12 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .toast.success {border-left: 4px solid #43e97b;}
 .toast.error {border-left: 4px solid #f5576c;}
 
-/ Edit mode indicator /
+/* Edit mode indicator */
 .edit-mode-banner {background: linear-gradient(135deg, #28a745 0%, #20c997 100%);color: white;padding: 10px;text-align: center;border-radius: 10px;margin-bottom: 15px;display: none;animation: slideInDown 0.5s ease;}
 .edit-mode-banner.active {display: block;}
 @keyframes slideInDown {from {transform: translateY(-100%);opacity: 0;}to {transform: translateY(0);opacity: 1;}}
 
-/ Tablet Styles /
+/* Tablet Styles */
 @media (min-width: 600px) and (max-width: 1024px) {
 .container {padding: 20px;}
 .denomination-grid {grid-template-columns: 1fr 1fr;}
@@ -189,7 +189,7 @@ h3 {color: #666;margin: 10px 0;font-size: clamp(0.85rem, 2.5vw, 1rem);}
 .stats-grid {grid-template-columns: repeat(3, 1fr);}
 }
 
-/ Desktop Styles /
+/* Desktop Styles */
 @media (min-width: 1025px) {
 body {padding: 20px;}
 .container {padding: 30px;border-radius: 20px;}
@@ -208,18 +208,18 @@ body {padding: 20px;}
 </head>
 <body>
 <div class="container">
-<h1> ระบบตรวจสอบลิ้นชักเงินสด</h1>
+<h1>💰 ระบบตรวจสอบลิ้นชักเงินสด</h1>
 <div class="date-info">วันที่: <span id="currentDate"></span></div>
 
 <!-- Edit Mode Banner -->
 <div class="edit-mode-banner" id="editModeBanner">
- กำลังแก้ไขข้อมูล - Session: <span id="editingSessionId"></span>
+🔧 กำลังแก้ไขข้อมูล - Session: <span id="editingSessionId"></span>
 </div>
 
 <!-- Navigation Tabs -->
 <div class="nav-tabs">
-<button class="nav-tab active" onclick="switchTab('input-tab')"> บันทึกข้อมูล</button>
-<button class="nav-tab" onclick="switchTab('history-tab')"> ประวัติการบันทึก</button>
+<button class="nav-tab active" onclick="switchTab('input-tab')">📝 บันทึกข้อมูล</button>
+<button class="nav-tab" onclick="switchTab('history-tab')">📊 ประวัติการบันทึก</button>
 </div>
 
 <!-- Input Tab Content -->
@@ -227,39 +227,39 @@ body {padding: 20px;}
 <!-- Staff Name Input -->
 <div class="staff-section">
 <div class="staff-input">
-<label for="staffName"> ชื่อพนักงาน:</label>
+<label for="staffName">👤 ชื่อพนักงาน:</label>
 <input type="text" id="staffName" placeholder="กรุณาใส่ชื่อพนักงาน" value="Supanut Chailungka">
 </div>
 </div>
 
 <div class="cash-section">
-<h2> เงินสดเปิดกะ (Opening Cash)</h2>
+<h2>💵 เงินสดเปิดกะ (Opening Cash)</h2>
 <div class="denomination-grid">
 <div class="bills-section">
 <h3>ธนบัตร</h3>
 <div class="input-row">
 <label>1,000 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="1000" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="1000" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>500 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="500" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="500" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>100 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="100" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="100" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>50 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="50" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="50" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>20 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="20" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="20" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 </div>
@@ -267,22 +267,22 @@ body {padding: 20px;}
 <h3>เหรียญ</h3>
 <div class="input-row">
 <label>10 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="10" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="10" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>5 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="5" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="5" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>2 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="2" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="2" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>1 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="opening" data-value="1" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="opening" data-value="1" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 </div>
@@ -293,7 +293,7 @@ body {padding: 20px;}
 </div>
 
 <div class="transaction-section">
-<h2> รายการระหว่างวัน</h2>
+<h2>💳 รายการระหว่างวัน</h2>
 <div class="input-group">
 <label>ยอดขายทั้งหมด (Revenue):</label>
 <input type="number" inputmode="decimal" id="revenue" min="0" step="0.01" value="0">
@@ -303,39 +303,39 @@ body {padding: 20px;}
 <input type="number" inputmode="decimal" id="promptpay" min="0" step="0.01" value="0">
 </div>
 <div class="input-group">
-<label> หมายเหตุ (Notes):</label>
+<label>📝 หมายเหตุ (Notes):</label>
 <textarea id="notes" rows="3" placeholder="เพิ่มหมายเหตุ (ถ้ามี)"></textarea>
 </div>
 </div>
 
 <div class="cash-section">
-<h2> เงินสดปิดกะ (Closing Cash)</h2>
+<h2>💰 เงินสดปิดกะ (Closing Cash)</h2>
 <div class="denomination-grid">
 <div class="bills-section">
 <h3>ธนบัตร</h3>
 <div class="input-row">
 <label>1,000 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="1000" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="1000" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>500 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="500" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="500" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>100 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="100" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="100" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>50 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="50" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="50" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>20 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="20" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="20" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 </div>
@@ -343,17 +343,17 @@ body {padding: 20px;}
 <h3>เหรียญ</h3>
 <div class="input-row">
 <label>10 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="10" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="10" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>5 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="5" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="5" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
 <label>2 บาท:</label>
-<input type="number" inputmode="numeric" pattern="[0-9]" class="closing" data-value="2" min="0" value="0">
+<input type="number" inputmode="numeric" pattern="[0-9]*" class="closing" data-value="2" min="0" value="0">
 <span class="subtotal">0</span>
 </div>
 <div class="input-row">
@@ -369,7 +369,7 @@ body {padding: 20px;}
 </div>
 
 <div class="summary-section">
-<h2> สรุปผล</h2>
+<h2>📊 สรุปผล</h2>
 <div class="summary-grid">
 <div class="summary-item">
 <label>เงินสดที่ควรมี:</label>
@@ -380,7 +380,7 @@ body {padding: 20px;}
 <span id="actualCash">0</span> บาท
 </div>
 <div class="summary-item difference exact" id="differenceBox">
-<div class="difference-status" id="statusIcon"></div>
+<div class="difference-status" id="statusIcon">✓</div>
 <label>ผลต่าง:</label>
 <span id="difference">0</span> บาท
 <div id="differenceText" style="margin-top: 10px; font-size: 0.9rem;"></div>
@@ -389,14 +389,14 @@ body {padding: 20px;}
 </div>
 
 <div class="button-section">
-<button id="saveBtn" class="btn-primary"> บันทึกข้อมูล</button>
-<button id="resetBtn" class="btn-secondary"> ล้างข้อมูล</button>
+<button id="saveBtn" class="btn-primary">💾 บันทึกข้อมูล</button>
+<button id="resetBtn" class="btn-secondary">🔄 ล้างข้อมูล</button>
 </div>
 </div>
 
 <!-- History Tab Content -->
 <div id="history-tab" class="tab-content">
-<h2> ประวัติการบันทึกข้อมูล</h2>
+<h2>📊 ประวัติการบันทึกข้อมูล</h2>
 
 <!-- History Controls -->
 <div class="history-controls">
@@ -408,7 +408,7 @@ body {padding: 20px;}
 <option value="เงินขาด">เงินขาด</option>
 </select>
 <input type="text" id="filterStaff" placeholder="ชื่อพนักงาน">
-<button class="btn-refresh" onclick="loadHistoryData()"> รีเฟรช</button>
+<button class="btn-refresh" onclick="loadHistoryData()">🔄 รีเฟรช</button>
 </div>
 
 <!-- Statistics Cards -->
@@ -452,7 +452,7 @@ body {padding: 20px;}
 </tbody>
 </table>
 <div id="emptyState" class="empty-state" style="display: none;">
-<div class="empty-state-icon"></div>
+<div class="empty-state-icon">📁</div>
 <div class="empty-state-text">ยังไม่มีข้อมูลการบันทึก</div>
 </div>
 </div>
@@ -520,8 +520,8 @@ body {padding: 20px;}
 </form>
 </div>
 <div class="modal-footer">
-<button class="btn-save-edit" onclick="saveEdit()"> บันทึกการแก้ไข</button>
-<button class="btn-cancel" onclick="closeEditModal()"> ยกเลิก</button>
+<button class="btn-save-edit" onclick="saveEdit()">💾 บันทึกการแก้ไข</button>
+<button class="btn-cancel" onclick="closeEditModal()">❌ ยกเลิก</button>
 </div>
 </div>
 </div>
@@ -529,7 +529,7 @@ body {padding: 20px;}
 <!-- Delete Confirmation Modal -->
 <div id="deleteModal" class="modal">
 <div class="confirm-dialog">
-<div class="confirm-icon"</div>
+<div class="confirm-icon">⚠️</div>
 <div class="confirm-message">คุณแน่ใจหรือไม่ที่จะลบข้อมูลนี้?</div>
 <div class="confirm-buttons">
 <button class="btn-confirm-yes" onclick="confirmDelete()">ลบ</button>
@@ -541,9 +541,8 @@ body {padding: 20px;}
 <div class="toast" id="toast"></div>
 
 <script>
-// Google Apps Script Web App URL
+// Google Apps Script Web App URL - UPDATED
 const GOOGLE_SCRIPT_URL = '<https://script.google.com/macros/s/AKfycbxETqaXBVCdIbXheDtXCBNK0UAe0m6G8u1WvFvmtTwtehW0hBFvrfoITTrMA5__mzYB/exec>';
-
 
 // Global variables
 let historyData = [];
@@ -554,357 +553,424 @@ let deleteSessionId = null;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-setCurrentDate();
-attachEventListeners();
-loadFromLocalStorage();
-checkDeviceType();
-setInterval(setCurrentDate, 1000);
+    setCurrentDate();
+    attachEventListeners();
+    loadFromLocalStorage();
+    checkDeviceType();
+    setInterval(setCurrentDate, 1000);
 });
 
 function checkDeviceType() {
-const isMobile = window.innerWidth <= 768;
-const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
 
-if (isMobile || isTablet) {
-let lastTouchEnd = 0;
-document.addEventListener('touchend', function (event) {
-const now = Date.now();
-if (now - lastTouchEnd <= 300) {
-event.preventDefault();
-}
-lastTouchEnd = now;
-}, false);
-}
+    if (isMobile || isTablet) {
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    }
 }
 
 function setCurrentDate() {
-const now = new Date();
-const options = {
-year: 'numeric',
-month: 'long',
-day: 'numeric',
-hour: '2-digit',
-minute: '2-digit',
-second: '2-digit'
-};
-document.getElementById('currentDate').textContent =
-now.toLocaleDateString('th-TH', options);
+    const now = new Date();
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    document.getElementById('currentDate').textContent =
+        now.toLocaleDateString('th-TH', options);
 }
 
 // Tab switching
 function switchTab(tabId) {
-document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
-document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-if (tabId === 'input-tab') {
-document.querySelectorAll('.nav-tab')[0].classList.add('active');
-} else {
-document.querySelectorAll('.nav-tab')[1].classList.add('active');
-loadHistoryData();
-}
+    if (tabId === 'input-tab') {
+        document.querySelectorAll('.nav-tab')[0].classList.add('active');
+    } else {
+        document.querySelectorAll('.nav-tab')[1].classList.add('active');
+        loadHistoryData();
+    }
 
-document.getElementById(tabId).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
 }
 
 // Load history data from Google Sheets
 async function loadHistoryData() {
-const tableBody = document.getElementById('historyTableBody');
-const emptyState = document.getElementById('emptyState');
+    const tableBody = document.getElementById('historyTableBody');
+    const emptyState = document.getElementById('emptyState');
 
-tableBody.innerHTML = '<tr><td colspan="9" style="text-align: center;"><span class="loading-spinner"></span> กำลังโหลดข้อมูล...</td></tr>';
-emptyState.style.display = 'none';
+    tableBody.innerHTML = '<tr><td colspan="9" style="text-align: center;"><span class="loading-spinner"></span> กำลังโหลดข้อมูล...</td></tr>';
+    emptyState.style.display = 'none';
 
-try {
-const response = await fetch(GOOGLE_SCRIPT_URL);
-const result = await response.json();
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL);
+        const result = await response.json();
 
-if (result.status === 'success' && result.data && result.data.length > 0) {
-historyData = result.data;
-applyFilters();
-updateStatistics();
-} else {
-tableBody.innerHTML = '';
-emptyState.style.display = 'block';
-}
-} catch (error) {
-console.error('Error loading data:', error);
-loadLocalHistory();
-}
+        if (result.status === 'success' && result.data && result.data.length > 0) {
+            historyData = result.data;
+            applyFilters();
+            updateStatistics();
+        } else {
+            tableBody.innerHTML = '';
+            emptyState.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Error loading data:', error);
+        loadLocalHistory();
+    }
 }
 
 // Load history from localStorage (fallback)
 function loadLocalHistory() {
-const localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
-historyData = localHistory;
-applyFilters();
-updateStatistics();
+    const localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
+    historyData = localHistory;
+    applyFilters();
+    updateStatistics();
 
-if (localHistory.length === 0) {
-document.getElementById('historyTableBody').innerHTML = '';
-document.getElementById('emptyState').style.display = 'block';
-}
+    if (localHistory.length === 0) {
+        document.getElementById('historyTableBody').innerHTML = '';
+        document.getElementById('emptyState').style.display = 'block';
+    }
 }
 
 // Apply filters to history data
 function applyFilters() {
-const dateFilter = document.getElementById('filterDate').value;
-const statusFilter = document.getElementById('filterStatus').value;
-const staffFilter = document.getElementById('filterStaff').value.toLowerCase();
+    const dateFilter = document.getElementById('filterDate').value;
+    const statusFilter = document.getElementById('filterStatus').value;
+    const staffFilter = document.getElementById('filterStaff').value.toLowerCase();
 
-filteredData = historyData.filter(row => {
-let pass = true;
+    filteredData = historyData.filter(row => {
+        let pass = true;
 
-if (dateFilter && row['Date'] !== dateFilter) {
-pass = false;
-}
+        if (dateFilter && row['Date'] !== dateFilter) {
+            pass = false;
+        }
 
-if (statusFilter && row['Status'] !== statusFilter) {
-pass = false;
-}
+        if (statusFilter && row['Status'] !== statusFilter) {
+            pass = false;
+        }
 
-if (staffFilter && !row['Staff Name'].toLowerCase().includes(staffFilter)) {
-pass = false;
-}
+        if (staffFilter && !row['Staff Name'].toLowerCase().includes(staffFilter)) {
+            pass = false;
+        }
 
-return pass;
-});
+        return pass;
+    });
 
-displayHistoryTable(filteredData);
+    displayHistoryTable(filteredData);
 }
 
 // Display history in table
 function displayHistoryTable(data) {
-const tableBody = document.getElementById('historyTableBody');
-const emptyState = document.getElementById('emptyState');
+    const tableBody = document.getElementById('historyTableBody');
+    const emptyState = document.getElementById('emptyState');
 
-if (data.length === 0) {
-tableBody.innerHTML = '';
-emptyState.style.display = 'block';
-return;
-}
+    if (data.length === 0) {
+        tableBody.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+    }
 
-emptyState.style.display = 'none';
+    emptyState.style.display = 'none';
 
-tableBody.innerHTML = data.map(row => {
-const statusClass = row['Status'] === 'เงินเกิน' ? 'over' :
-row['Status'] === 'เงินขาด' ? 'under' : 'exact';
+    tableBody.innerHTML = data.map(row => {
+        const statusClass = row['Status'] === 'เงินเกิน' ? 'over' :
+                          row['Status'] === 'เงินขาด' ? 'under' : 'exact';
 
-return             <tr onclick="showDetails('${row['Session ID']}')">                 <td>${row['Date'] || ''}</td>                 <td>${row['Time'] || ''}</td>                 <td>${row['Staff Name'] || ''}</td>                 <td>${formatCurrency(row['Opening Total'])}</td>                 <td>${formatCurrency(row['Revenue'])}</td>                 <td>${formatCurrency(row['Closing Total'])}</td>                 <td>${formatCurrency(row['Difference'])}</td>                 <td><span class="status-badge ${statusClass}">${row['Status'] || ''}</span></td>                 <td>                     <div class="action-buttons">                         <button class="btn-action btn-view" onclick="event.stopPropagation(); showDetails('${row['Session ID']}')"></button>                         <button class="btn-action btn-edit" onclick="event.stopPropagation(); editRecord('${row['Session ID']}')"></button>                         <button class="btn-action btn-delete" onclick="event.stopPropagation(); deleteRecord('${row['Session ID']}')"></button>                     </div>                 </td>             </tr>        ;
-}).join('');
+        return `
+            <tr onclick="showDetails('${row['Session ID']}')">
+                <td>${row['Date'] || ''}</td>
+                <td>${row['Time'] || ''}</td>
+                <td>${row['Staff Name'] || ''}</td>
+                <td>${formatCurrency(row['Opening Total'])}</td>
+                <td>${formatCurrency(row['Revenue'])}</td>
+                <td>${formatCurrency(row['Closing Total'])}</td>
+                <td>${formatCurrency(row['Difference'])}</td>
+                <td><span class="status-badge ${statusClass}">${row['Status'] || ''}</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-action btn-view" onclick="event.stopPropagation(); showDetails('${row['Session ID']}')">👁️</button>
+                        <button class="btn-action btn-edit" onclick="event.stopPropagation(); editRecord('${row['Session ID']}')">✏️</button>
+                        <button class="btn-action btn-delete" onclick="event.stopPropagation(); deleteRecord('${row['Session ID']}')">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
 // Update statistics
 function updateStatistics() {
-const data = filteredData.length > 0 ? filteredData : historyData;
+    const data = filteredData.length > 0 ? filteredData : historyData;
 
-document.getElementById('totalRecords').textContent = data.length;
+    document.getElementById('totalRecords').textContent = data.length;
 
-const totalRevenue = data.reduce((sum, row) => sum + (parseFloat(row['Revenue']) || 0), 0);
-document.getElementById('totalRevenue').textContent = formatCurrency(totalRevenue);
+    const totalRevenue = data.reduce((sum, row) => sum + (parseFloat(row['Revenue']) || 0), 0);
+    document.getElementById('totalRevenue').textContent = formatCurrency(totalRevenue);
 
-const totalDiff = data.reduce((sum, row) => sum + (parseFloat(row['Difference']) || 0), 0);
-document.getElementById('totalDifference').textContent = formatCurrency(totalDiff);
+    const totalDiff = data.reduce((sum, row) => sum + (parseFloat(row['Difference']) || 0), 0);
+    document.getElementById('totalDifference').textContent = formatCurrency(totalDiff);
 
-const perfectCount = data.filter(row => row['Status'] === 'พอดี').length;
-document.getElementById('perfectCount').textContent = perfectCount;
+    const perfectCount = data.filter(row => row['Status'] === 'พอดี').length;
+    document.getElementById('perfectCount').textContent = perfectCount;
 }
 
 // Edit record
 async function editRecord(sessionId) {
-const record = historyData.find(row => row['Session ID'] === sessionId);
+    const record = historyData.find(row => row['Session ID'] === sessionId);
 
-if (record) {
-// Switch to input tab
-switchTab('input-tab');
+    if (record) {
+        // Switch to input tab
+        switchTab('input-tab');
 
-// Set edit mode
-editMode = true;
-editingSessionId = sessionId;
+        // Set edit mode
+        editMode = true;
+        editingSessionId = sessionId;
 
-// Show edit mode banner
-document.getElementById('editModeBanner').classList.add('active');
-document.getElementById('editingSessionId').textContent = sessionId;
+        // Show edit mode banner
+        document.getElementById('editModeBanner').classList.add('active');
+        document.getElementById('editingSessionId').textContent = sessionId;
 
-// Fill form with record data
-document.getElementById('staffName').value = record['Staff Name'] || '';
-document.getElementById('revenue').value = record['Revenue'] || '0';
-document.getElementById('promptpay').value = record['PromptPay'] || '0';
-document.getElementById('notes').value = record['Notes'] || '';
+        // Fill form with record data
+        document.getElementById('staffName').value = record['Staff Name'] || '';
+        document.getElementById('revenue').value = record['Revenue'] || '0';
+        document.getElementById('promptpay').value = record['PromptPay'] || '0';
+        document.getElementById('notes').value = record['Notes'] || '';
 
-// Calculate opening and closing denominations (simplified - you may need to store actual denominations)
-const openingTotal = parseFloat(record['Opening Total']) || 0;
-const closingTotal = parseFloat(record['Closing Total']) || 0;
+        // Calculate opening and closing denominations (simplified - you may need to store actual denominations)
+        const openingTotal = parseFloat(record['Opening Total']) || 0;
+        const closingTotal = parseFloat(record['Closing Total']) || 0;
 
-// Reset all denominations
-document.querySelectorAll('.opening, .closing').forEach(input => {
-input.value = '0';
-});
+        // Reset all denominations
+        document.querySelectorAll('.opening, .closing').forEach(input => {
+            input.value = '0';
+        });
 
-// Set a simple distribution (you may want to store actual denominations in the future)
-if (openingTotal > 0) {
-const opening1000 = Math.floor(openingTotal / 1000);
-const remainingOpening = openingTotal % 1000;
-const opening100 = Math.floor(remainingOpening / 100);
+        // Set a simple distribution (you may want to store actual denominations in the future)
+        if (openingTotal > 0) {
+            const opening1000 = Math.floor(openingTotal / 1000);
+            const remainingOpening = openingTotal % 1000;
+            const opening100 = Math.floor(remainingOpening / 100);
 
-document.querySelector('.opening[data-value="1000"]').value = opening1000;
-document.querySelector('.opening[data-value="100"]').value = opening100;
-}
+            document.querySelector('.opening[data-value="1000"]').value = opening1000;
+            document.querySelector('.opening[data-value="100"]').value = opening100;
+        }
 
-if (closingTotal > 0) {
-const closing1000 = Math.floor(closingTotal / 1000);
-const remainingClosing = closingTotal % 1000;
-const closing100 = Math.floor(remainingClosing / 100);
+        if (closingTotal > 0) {
+            const closing1000 = Math.floor(closingTotal / 1000);
+            const remainingClosing = closingTotal % 1000;
+            const closing100 = Math.floor(remainingClosing / 100);
 
-document.querySelector('.closing[data-value="1000"]').value = closing1000;
-document.querySelector('.closing[data-value="100"]').value = closing100;
-}
+            document.querySelector('.closing[data-value="1000"]').value = closing1000;
+            document.querySelector('.closing[data-value="100"]').value = closing100;
+        }
 
-// Update calculations
-document.querySelectorAll('.opening, .closing').forEach(input => {
-calculateSubtotal(input);
-});
-calculateOpeningTotal();
-calculateClosingTotal();
-calculateSummary();
+        // Update calculations
+        document.querySelectorAll('.opening, .closing').forEach(input => {
+            calculateSubtotal(input);
+        });
+        calculateOpeningTotal();
+        calculateClosingTotal();
+        calculateSummary();
 
-// Change save button text
-document.getElementById('saveBtn').innerHTML = ' อัพเดทข้อมูล';
+        // Change save button text
+        document.getElementById('saveBtn').innerHTML = '💾 อัพเดทข้อมูล';
 
-// Scroll to top
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 // Alternative edit method using modal
 function openEditModal(sessionId) {
-const record = historyData.find(row => row['Session ID'] === sessionId);
+    const record = historyData.find(row => row['Session ID'] === sessionId);
 
-if (record) {
-document.getElementById('edit-sessionId').value = record['Session ID'];
-document.getElementById('edit-date').value = record['Date'];
-document.getElementById('edit-time').value = record['Time'];
-document.getElementById('edit-staffName').value = record['Staff Name'];
-document.getElementById('edit-openingTotal').value = record['Opening Total'];
-document.getElementById('edit-revenue').value = record['Revenue'];
-document.getElementById('edit-promptpay').value = record['PromptPay'];
-document.getElementById('edit-closingTotal').value = record['Closing Total'];
-document.getElementById('edit-notes').value = record['Notes'] || '';
+    if (record) {
+        document.getElementById('edit-sessionId').value = record['Session ID'];
+        document.getElementById('edit-date').value = record['Date'];
+        document.getElementById('edit-time').value = record['Time'];
+        document.getElementById('edit-staffName').value = record['Staff Name'];
+        document.getElementById('edit-openingTotal').value = record['Opening Total'];
+        document.getElementById('edit-revenue').value = record['Revenue'];
+        document.getElementById('edit-promptpay').value = record['PromptPay'];
+        document.getElementById('edit-closingTotal').value = record['Closing Total'];
+        document.getElementById('edit-notes').value = record['Notes'] || '';
 
-document.getElementById('editModal').classList.add('active');
-}
+        document.getElementById('editModal').classList.add('active');
+    }
 }
 
 // Save edit from modal
 async function saveEdit() {
-const sessionId = document.getElementById('edit-sessionId').value;
-const openingTotal = parseFloat(document.getElementById('edit-openingTotal').value) || 0;
-const revenue = parseFloat(document.getElementById('edit-revenue').value) || 0;
-const promptpay = parseFloat(document.getElementById('edit-promptpay').value) || 0;
-const closingTotal = parseFloat(document.getElementById('edit-closingTotal').value) || 0;
-const expectedCash = openingTotal + revenue - promptpay;
-const actualCash = closingTotal;
-const difference = actualCash - expectedCash;
-const status = difference > 0 ? 'เงินเกิน' : difference < 0 ? 'เงินขาด' : 'พอดี';
+    const sessionId = document.getElementById('edit-sessionId').value;
+    const openingTotal = parseFloat(document.getElementById('edit-openingTotal').value) || 0;
+    const revenue = parseFloat(document.getElementById('edit-revenue').value) || 0;
+    const promptpay = parseFloat(document.getElementById('edit-promptpay').value) || 0;
+    const closingTotal = parseFloat(document.getElementById('edit-closingTotal').value) || 0;
+    const expectedCash = openingTotal + revenue - promptpay;
+    const actualCash = closingTotal;
+    const difference = actualCash - expectedCash;
+    const status = difference > 0 ? 'เงินเกิน' : difference < 0 ? 'เงินขาด' : 'พอดี';
 
-const formData = new FormData();
-formData.append('action', 'update');
-formData.append('sessionId', sessionId);
-formData.append('date', document.getElementById('edit-date').value);
-formData.append('time', document.getElementById('edit-time').value);
-formData.append('staffName', document.getElementById('edit-staffName').value);
-formData.append('openingTotal', openingTotal);
-formData.append('revenue', revenue);
-formData.append('promptpay', promptpay);
-formData.append('expectedCash', expectedCash);
-formData.append('closingTotal', closingTotal);
-formData.append('actualCash', actualCash);
-formData.append('difference', difference);
-formData.append('status', status);
-formData.append('notes', document.getElementById('edit-notes').value);
+    const formData = new FormData();
+    formData.append('action', 'update');
+    formData.append('sessionId', sessionId);
+    formData.append('date', document.getElementById('edit-date').value);
+    formData.append('time', document.getElementById('edit-time').value);
+    formData.append('staffName', document.getElementById('edit-staffName').value);
+    formData.append('openingTotal', openingTotal);
+    formData.append('revenue', revenue);
+    formData.append('promptpay', promptpay);
+    formData.append('expectedCash', expectedCash);
+    formData.append('closingTotal', closingTotal);
+    formData.append('actualCash', actualCash);
+    formData.append('difference', difference);
+    formData.append('status', status);
+    formData.append('notes', document.getElementById('edit-notes').value);
 
-try {
-const response = await fetch(GOOGLE_SCRIPT_URL, {
-method: 'POST',
-body: formData
-});
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        });
 
-showToast('อัพเดทข้อมูลสำเร็จ! ', 'success');
-closeEditModal();
-loadHistoryData();
+        showToast('อัพเดทข้อมูลสำเร็จ! ✅', 'success');
+        closeEditModal();
+        loadHistoryData();
 
-} catch (error) {
-console.error('Error updating record:', error);
-showToast('เกิดข้อผิดพลาดในการอัพเดท ', 'error');
-}
+    } catch (error) {
+        console.error('Error updating record:', error);
+        showToast('เกิดข้อผิดพลาดในการอัพเดท ❌', 'error');
+    }
 }
 
 // Close edit modal
 function closeEditModal() {
-document.getElementById('editModal').classList.remove('active');
+    document.getElementById('editModal').classList.remove('active');
 }
 
 // Delete record
 function deleteRecord(sessionId) {
-deleteSessionId = sessionId;
-document.getElementById('deleteModal').classList.add('active');
+    deleteSessionId = sessionId;
+    document.getElementById('deleteModal').classList.add('active');
 }
 
 // Confirm delete
 async function confirmDelete() {
-if (!deleteSessionId) return;
+    if (!deleteSessionId) return;
 
-try {
-const response = await fetch(${GOOGLE_SCRIPT_URL}?action=delete&sessionId=${deleteSessionId});
-const result = await response.json();
+    try {
+        const response = await fetch(`${GOOGLE_SCRIPT_URL}?action=delete&sessionId=${deleteSessionId}`);
+        const result = await response.json();
 
-if (result.status === 'success') {
-showToast('ลบข้อมูลสำเร็จ! ', 'success');
+        if (result.status === 'success') {
+            showToast('ลบข้อมูลสำเร็จ! 🗑️', 'success');
 
-// Remove from local history too
-let localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
-localHistory = localHistory.filter(record => record['Session ID'] !== deleteSessionId);
-localStorage.setItem('cashHistory', JSON.stringify(localHistory));
+            // Remove from local history too
+            let localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
+            localHistory = localHistory.filter(record => record['Session ID'] !== deleteSessionId);
+            localStorage.setItem('cashHistory', JSON.stringify(localHistory));
 
-closeDeleteModal();
-loadHistoryData();
-} else {
-showToast('เกิดข้อผิดพลาดในการลบ ', 'error');
-}
-} catch (error) {
-console.error('Error deleting record:', error);
-showToast('เกิดข้อผิดพลาดในการลบ ', 'error');
-}
+            closeDeleteModal();
+            loadHistoryData();
+        } else {
+            showToast('เกิดข้อผิดพลาดในการลบ ❌', 'error');
+        }
+    } catch (error) {
+        console.error('Error deleting record:', error);
+        showToast('เกิดข้อผิดพลาดในการลบ ❌', 'error');
+    }
 }
 
 // Close delete modal
 function closeDeleteModal() {
-document.getElementById('deleteModal').classList.remove('active');
-deleteSessionId = null;
+    document.getElementById('deleteModal').classList.remove('active');
+    deleteSessionId = null;
 }
 
 // Show details modal
 function showDetails(sessionId) {
-const modal = document.getElementById('detailModal');
-const modalBody = document.getElementById('modalBody');
+    const modal = document.getElementById('detailModal');
+    const modalBody = document.getElementById('modalBody');
 
-const record = historyData.find(row => row['Session ID'] === sessionId);
+    const record = historyData.find(row => row['Session ID'] === sessionId);
 
-if (record) {
-modalBody.innerHTML =             <div class="detail-row">                 <span class="detail-label">Session ID:</span>                 <span class="detail-value">${record['Session ID'] || ''}</span>             </div>             <div class="detail-row">                 <span class="detail-label">วันที่:</span>                 <span class="detail-value">${record['Date'] || ''}</span>             </div>             <div class="detail-row">                 <span class="detail-label">เวลา:</span>                 <span class="detail-value">${record['Time'] || ''}</span>             </div>             <div class="detail-row">                 <span class="detail-label">พนักงาน:</span>                 <span class="detail-value">${record['Staff Name'] || ''}</span>             </div>             <div class="detail-row">                 <span class="detail-label">เงินสดเปิดกะ:</span>                 <span class="detail-value">${formatCurrency(record['Opening Total'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">ยอดขาย:</span>                 <span class="detail-value">${formatCurrency(record['Revenue'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">PromptPay:</span>                 <span class="detail-value">${formatCurrency(record['PromptPay'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">เงินสดที่ควรมี:</span>                 <span class="detail-value">${formatCurrency(record['Expected Cash'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">เงินสดปิดกะ:</span>                 <span class="detail-value">${formatCurrency(record['Closing Total'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">ผลต่าง:</span>                 <span class="detail-value">${formatCurrency(record['Difference'])}</span>             </div>             <div class="detail-row">                 <span class="detail-label">สถานะ:</span>                 <span class="detail-value">${record['Status'] || ''}</span>             </div>             <div class="detail-row">                 <span class="detail-label">หมายเหตุ:</span>                 <span class="detail-value">${record['Notes'] || '-'}</span>             </div>        ;
+    if (record) {
+        modalBody.innerHTML = `
+            <div class="detail-row">
+                <span class="detail-label">Session ID:</span>
+                <span class="detail-value">${record['Session ID'] || ''}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">วันที่:</span>
+                <span class="detail-value">${record['Date'] || ''}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">เวลา:</span>
+                <span class="detail-value">${record['Time'] || ''}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">พนักงาน:</span>
+                <span class="detail-value">${record['Staff Name'] || ''}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">เงินสดเปิดกะ:</span>
+                <span class="detail-value">${formatCurrency(record['Opening Total'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">ยอดขาย:</span>
+                <span class="detail-value">${formatCurrency(record['Revenue'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">PromptPay:</span>
+                <span class="detail-value">${formatCurrency(record['PromptPay'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">เงินสดที่ควรมี:</span>
+                <span class="detail-value">${formatCurrency(record['Expected Cash'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">เงินสดปิดกะ:</span>
+                <span class="detail-value">${formatCurrency(record['Closing Total'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">ผลต่าง:</span>
+                <span class="detail-value">${formatCurrency(record['Difference'])}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">สถานะ:</span>
+                <span class="detail-value">${record['Status'] || ''}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">หมายเหตุ:</span>
+                <span class="detail-value">${record['Notes'] || '-'}</span>
+            </div>
+        `;
 
-modal.classList.add('active');
-}
+        modal.classList.add('active');
+    }
 }
 
 // Close modal
 function closeModal() {
-document.getElementById('detailModal').classList.remove('active');
+    document.getElementById('detailModal').classList.remove('active');
 }
 
 // Format currency
 function formatCurrency(value) {
-const num = parseFloat(value) || 0;
-return num.toLocaleString('th-TH', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    const num = parseFloat(value) || 0;
+    return num.toLocaleString('th-TH', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 // Add event listeners for filters
@@ -914,446 +980,446 @@ document.getElementById('filterStaff')?.addEventListener('input', applyFilters);
 
 // Close modals when clicking outside
 document.getElementById('detailModal')?.addEventListener('click', function(e) {
-if (e.target === this) {
-closeModal();
-}
+    if (e.target === this) {
+        closeModal();
+    }
 });
 
 document.getElementById('editModal')?.addEventListener('click', function(e) {
-if (e.target === this) {
-closeEditModal();
-}
+    if (e.target === this) {
+        closeEditModal();
+    }
 });
 
 document.getElementById('deleteModal')?.addEventListener('click', function(e) {
-if (e.target === this) {
-closeDeleteModal();
-}
+    if (e.target === this) {
+        closeDeleteModal();
+    }
 });
 
 function attachEventListeners() {
-// Real-time calculation for all inputs
-document.querySelectorAll('input[type="number"]').forEach(input => {
-input.addEventListener('input', handleInputChange);
-input.addEventListener('change', handleInputChange);
-input.addEventListener('focus', function() {
-this.select();
-if (window.innerWidth <= 768) {
-setTimeout(() => {
-this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}, 300);
-}
-});
-});
+    // Real-time calculation for all inputs
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('input', handleInputChange);
+        input.addEventListener('change', handleInputChange);
+        input.addEventListener('focus', function() {
+            this.select();
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        });
+    });
 
-// Buttons
-document.getElementById('saveBtn').addEventListener('click', saveToGoogleSheets);
-document.getElementById('resetBtn').addEventListener('click', resetForm);
+    // Buttons
+    document.getElementById('saveBtn').addEventListener('click', saveToGoogleSheets);
+    document.getElementById('resetBtn').addEventListener('click', resetForm);
 
-// Touch feedback
-document.querySelectorAll('button').forEach(btn => {
-btn.addEventListener('touchstart', function() {
-this.style.transform = 'scale(0.95)';
-});
-btn.addEventListener('touchend', function() {
-this.style.transform = '';
-});
-});
+    // Touch feedback
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        btn.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+    });
 }
 
 function handleInputChange() {
-if (this.value < 0) this.value = 0;
+    if (this.value < 0) this.value = 0;
 
-if (this.classList.contains('opening') || this.classList.contains('closing')) {
-calculateSubtotal(this);
-}
+    if (this.classList.contains('opening') || this.classList.contains('closing')) {
+        calculateSubtotal(this);
+    }
 
-if (this.classList.contains('opening')) {
-calculateOpeningTotal();
-} else if (this.classList.contains('closing')) {
-calculateClosingTotal();
-}
+    if (this.classList.contains('opening')) {
+        calculateOpeningTotal();
+    } else if (this.classList.contains('closing')) {
+        calculateClosingTotal();
+    }
 
-calculateSummary();
+    calculateSummary();
 }
 
 function calculateSubtotal(input) {
-const quantity = parseInt(input.value) || 0;
-const value = parseInt(input.dataset.value);
-const subtotal = quantity * value;
-const subtotalSpan = input.parentElement.querySelector('.subtotal');
-subtotalSpan.textContent = subtotal.toLocaleString();
+    const quantity = parseInt(input.value) || 0;
+    const value = parseInt(input.dataset.value);
+    const subtotal = quantity * value;
+    const subtotalSpan = input.parentElement.querySelector('.subtotal');
+    subtotalSpan.textContent = subtotal.toLocaleString();
 
-subtotalSpan.classList.add('animated');
-setTimeout(() => {
-subtotalSpan.classList.remove('animated');
-}, 500);
+    subtotalSpan.classList.add('animated');
+    setTimeout(() => {
+        subtotalSpan.classList.remove('animated');
+    }, 500);
 }
 
 function calculateOpeningTotal() {
-let total = 0;
-document.querySelectorAll('.opening').forEach(input => {
-const quantity = parseInt(input.value) || 0;
-const value = parseInt(input.dataset.value);
-total += quantity * value;
-});
+    let total = 0;
+    document.querySelectorAll('.opening').forEach(input => {
+        const quantity = parseInt(input.value) || 0;
+        const value = parseInt(input.dataset.value);
+        total += quantity * value;
+    });
 
-const element = document.getElementById('openingTotal');
-animateValue(element, parseInt(element.textContent.replace(/,/g, '')) || 0, total, 300);
-return total;
+    const element = document.getElementById('openingTotal');
+    animateValue(element, parseInt(element.textContent.replace(/,/g, '')) || 0, total, 300);
+    return total;
 }
 
 function calculateClosingTotal() {
-let total = 0;
-document.querySelectorAll('.closing').forEach(input => {
-const quantity = parseInt(input.value) || 0;
-const value = parseInt(input.dataset.value);
-total += quantity * value;
-});
+    let total = 0;
+    document.querySelectorAll('.closing').forEach(input => {
+        const quantity = parseInt(input.value) || 0;
+        const value = parseInt(input.dataset.value);
+        total += quantity * value;
+    });
 
-const element = document.getElementById('closingTotal');
-animateValue(element, parseInt(element.textContent.replace(/,/g, '')) || 0, total, 300);
-return total;
+    const element = document.getElementById('closingTotal');
+    animateValue(element, parseInt(element.textContent.replace(/,/g, '')) || 0, total, 300);
+    return total;
 }
 
 function calculateSummary() {
-const openingCash = calculateOpeningTotal();
-const revenue = parseFloat(document.getElementById('revenue').value) || 0;
-const promptpay = parseFloat(document.getElementById('promptpay').value) || 0;
-const closingCash = calculateClosingTotal();
+    const openingCash = calculateOpeningTotal();
+    const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+    const promptpay = parseFloat(document.getElementById('promptpay').value) || 0;
+    const closingCash = calculateClosingTotal();
 
-const expectedCash = openingCash + revenue - promptpay;
-const actualCash = closingCash;
-const difference = actualCash - expectedCash;
+    const expectedCash = openingCash + revenue - promptpay;
+    const actualCash = closingCash;
+    const difference = actualCash - expectedCash;
 
-animateValue(document.getElementById('expectedCash'),
-parseInt(document.getElementById('expectedCash').textContent.replace(/,/g, '')) || 0,
-expectedCash, 300);
+    animateValue(document.getElementById('expectedCash'),
+        parseInt(document.getElementById('expectedCash').textContent.replace(/,/g, '')) || 0,
+        expectedCash, 300);
 
-animateValue(document.getElementById('actualCash'),
-parseInt(document.getElementById('actualCash').textContent.replace(/,/g, '')) || 0,
-actualCash, 300);
+    animateValue(document.getElementById('actualCash'),
+        parseInt(document.getElementById('actualCash').textContent.replace(/,/g, '')) || 0,
+        actualCash, 300);
 
-animateValue(document.getElementById('difference'),
-parseInt(document.getElementById('difference').textContent.replace(/,/g, '')) || 0,
-difference, 300);
+    animateValue(document.getElementById('difference'),
+        parseInt(document.getElementById('difference').textContent.replace(/,/g, '')) || 0,
+        difference, 300);
 
-const diffBox = document.getElementById('differenceBox');
-const statusIcon = document.getElementById('statusIcon');
-const diffText = document.getElementById('differenceText');
+    const diffBox = document.getElementById('differenceBox');
+    const statusIcon = document.getElementById('statusIcon');
+    const diffText = document.getElementById('differenceText');
 
-diffBox.classList.remove('over', 'under', 'exact');
+    diffBox.classList.remove('over', 'under', 'exact');
 
-if (difference > 0) {
-diffBox.classList.add('over');
-statusIcon.innerHTML = '';
-statusIcon.style.background = '#43e97b';
-diffText.textContent = 'เงินเกิน';
-} else if (difference < 0) {
-diffBox.classList.add('under');
-statusIcon.innerHTML = '';
-statusIcon.style.background = '#f5576c';
-diffText.textContent = 'เงินขาด';
-} else {
-diffBox.classList.add('exact');
-statusIcon.innerHTML = '';
-statusIcon.style.background = '#667eea';
-diffText.textContent = 'พอดี';
-}
+    if (difference > 0) {
+        diffBox.classList.add('over');
+        statusIcon.innerHTML = '⬆️';
+        statusIcon.style.background = '#43e97b';
+        diffText.textContent = 'เงินเกิน';
+    } else if (difference < 0) {
+        diffBox.classList.add('under');
+        statusIcon.innerHTML = '⬇️';
+        statusIcon.style.background = '#f5576c';
+        diffText.textContent = 'เงินขาด';
+    } else {
+        diffBox.classList.add('exact');
+        statusIcon.innerHTML = '✓';
+        statusIcon.style.background = '#667eea';
+        diffText.textContent = 'พอดี';
+    }
 
-statusIcon.style.animation = 'none';
-setTimeout(() => {
-statusIcon.style.animation = 'bounceIn 0.5s ease';
-}, 10);
+    statusIcon.style.animation = 'none';
+    setTimeout(() => {
+        statusIcon.style.animation = 'bounceIn 0.5s ease';
+    }, 10);
 
-saveToLocalStorage();
+    saveToLocalStorage();
 }
 
 function animateValue(element, start, end, duration) {
-const range = end - start;
-const increment = range / (duration / 10);
-let current = start;
+    const range = end - start;
+    const increment = range / (duration / 10);
+    let current = start;
 
-const timer = setInterval(() => {
-current += increment;
-if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-current = end;
-clearInterval(timer);
-}
-element.textContent = Math.round(current).toLocaleString();
-}, 10);
+    const timer = setInterval(() => {
+        current += increment;
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            current = end;
+            clearInterval(timer);
+        }
+        element.textContent = Math.round(current).toLocaleString();
+    }, 10);
 }
 
 function generateSessionId() {
-const date = new Date();
-const random = Math.floor(Math.random() * 10000);
-return SESSION_${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2,'0')}${date.getDate().toString().padStart(2,'0')}_${date.getHours().toString().padStart(2,'0')}${date.getMinutes().toString().padStart(2,'0')}_${random};
+    const date = new Date();
+    const random = Math.floor(Math.random() * 10000);
+    return `SESSION_${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2,'0')}${date.getDate().toString().padStart(2,'0')}_${date.getHours().toString().padStart(2,'0')}${date.getMinutes().toString().padStart(2,'0')}_${random}`;
 }
 
 async function saveToGoogleSheets() {
-const btn = document.getElementById('saveBtn');
-const originalText = btn.innerHTML;
+    const btn = document.getElementById('saveBtn');
+    const originalText = btn.innerHTML;
 
-// Validation
-const staffName = document.getElementById('staffName').value.trim();
-if (!staffName) {
-showToast('กรุณาใส่ชื่อพนักงาน ', 'error');
-document.getElementById('staffName').focus();
-return;
-}
+    // Validation
+    const staffName = document.getElementById('staffName').value.trim();
+    if (!staffName) {
+        showToast('กรุณาใส่ชื่อพนักงาน ⚠️', 'error');
+        document.getElementById('staffName').focus();
+        return;
+    }
 
-btn.innerHTML = '<span class="loading"></span> กำลังบันทึก...';
-btn.disabled = true;
+    btn.innerHTML = '<span class="loading"></span> กำลังบันทึก...';
+    btn.disabled = true;
 
-if ('vibrate' in navigator) {
-navigator.vibrate(50);
-}
+    if ('vibrate' in navigator) {
+        navigator.vibrate(50);
+    }
 
-// Prepare data for Google Sheets
-const sessionId = editMode ? editingSessionId : generateSessionId();
-const now = new Date();
+    // Prepare data for Google Sheets
+    const sessionId = editMode ? editingSessionId : generateSessionId();
+    const now = new Date();
 
-const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' };
-const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Asia/Bangkok', hour12: false };
+    const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Asia/Bangkok', hour12: false };
 
-const formattedDate = now.toLocaleDateString('en-GB', dateOptions).split('/').reverse().join('-');
-const formattedTime = now.toLocaleTimeString('en-GB', timeOptions);
+    const formattedDate = now.toLocaleDateString('en-GB', dateOptions).split('/').reverse().join('-');
+    const formattedTime = now.toLocaleTimeString('en-GB', timeOptions);
 
-const openingTotal = calculateOpeningTotal();
-const closingTotal = calculateClosingTotal();
-const revenue = parseFloat(document.getElementById('revenue').value) || 0;
-const promptpay = parseFloat(document.getElementById('promptpay').value) || 0;
-const expectedCash = openingTotal + revenue - promptpay;
-const actualCash = closingTotal;
-const difference = actualCash - expectedCash;
-const status = difference > 0 ? 'เงินเกิน' : difference < 0 ? 'เงินขาด' : 'พอดี';
-const notes = document.getElementById('notes').value || '';
+    const openingTotal = calculateOpeningTotal();
+    const closingTotal = calculateClosingTotal();
+    const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+    const promptpay = parseFloat(document.getElementById('promptpay').value) || 0;
+    const expectedCash = openingTotal + revenue - promptpay;
+    const actualCash = closingTotal;
+    const difference = actualCash - expectedCash;
+    const status = difference > 0 ? 'เงินเกิน' : difference < 0 ? 'เงินขาด' : 'พอดี';
+    const notes = document.getElementById('notes').value || '';
 
-// Create form data for Google Sheets
-const formData = new FormData();
-if (editMode) {
-formData.append('action', 'update');
-}
-formData.append('sessionId', sessionId);
-formData.append('date', formattedDate);
-formData.append('time', formattedTime);
-formData.append('staffName', staffName);
-formData.append('openingTotal', openingTotal);
-formData.append('revenue', revenue);
-formData.append('promptpay', promptpay);
-formData.append('expectedCash', expectedCash);
-formData.append('closingTotal', closingTotal);
-formData.append('actualCash', actualCash);
-formData.append('difference', difference);
-formData.append('status', status);
-formData.append('notes', notes);
+    // Create form data for Google Sheets
+    const formData = new FormData();
+    if (editMode) {
+        formData.append('action', 'update');
+    }
+    formData.append('sessionId', sessionId);
+    formData.append('date', formattedDate);
+    formData.append('time', formattedTime);
+    formData.append('staffName', staffName);
+    formData.append('openingTotal', openingTotal);
+    formData.append('revenue', revenue);
+    formData.append('promptpay', promptpay);
+    formData.append('expectedCash', expectedCash);
+    formData.append('closingTotal', closingTotal);
+    formData.append('actualCash', actualCash);
+    formData.append('difference', difference);
+    formData.append('status', status);
+    formData.append('notes', notes);
 
-try {
-const response = await fetch(GOOGLE_SCRIPT_URL, {
-method: 'POST',
-body: formData
-});
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        });
 
-if (response.ok || response.status === 0) {
-btn.innerHTML = originalText;
-btn.disabled = false;
+        if (response.ok || response.status === 0) {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
 
-if (editMode) {
-showToast('อัพเดทข้อมูลสำเร็จ! ', 'success');
+            if (editMode) {
+                showToast('อัพเดทข้อมูลสำเร็จ! ✅', 'success');
 
-// Reset edit mode
-editMode = false;
-editingSessionId = null;
-document.getElementById('editModeBanner').classList.remove('active');
-document.getElementById('saveBtn').innerHTML = ' บันทึกข้อมูล';
+                // Reset edit mode
+                editMode = false;
+                editingSessionId = null;
+                document.getElementById('editModeBanner').classList.remove('active');
+                document.getElementById('saveBtn').innerHTML = '💾 บันทึกข้อมูล';
 
-// Switch back to history tab
-setTimeout(() => {
-switchTab('history-tab');
-}, 1500);
-} else {
-showToast('บันทึกข้อมูลสำเร็จ! ', 'success');
+                // Switch back to history tab
+                setTimeout(() => {
+                    switchTab('history-tab');
+                }, 1500);
+            } else {
+                showToast('บันทึกข้อมูลสำเร็จ! ✅', 'success');
 
-// Save to local history
-const historyRecord = {
-'Session ID': sessionId,
-'Date': formattedDate,
-'Time': formattedTime,
-'Staff Name': staffName,
-'Opening Total': openingTotal,
-'Revenue': revenue,
-'PromptPay': promptpay,
-'Expected Cash': expectedCash,
-'Closing Total': closingTotal,
-'Actual Cash': actualCash,
-'Difference': difference,
-'Status': status,
-'Notes': notes
-};
+                // Save to local history
+                const historyRecord = {
+                    'Session ID': sessionId,
+                    'Date': formattedDate,
+                    'Time': formattedTime,
+                    'Staff Name': staffName,
+                    'Opening Total': openingTotal,
+                    'Revenue': revenue,
+                    'PromptPay': promptpay,
+                    'Expected Cash': expectedCash,
+                    'Closing Total': closingTotal,
+                    'Actual Cash': actualCash,
+                    'Difference': difference,
+                    'Status': status,
+                    'Notes': notes
+                };
 
-let localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
-if (editMode) {
-// Update existing record
-const index = localHistory.findIndex(r => r['Session ID'] === sessionId);
-if (index !== -1) {
-localHistory[index] = historyRecord;
-}
-} else {
-// Add new record
-localHistory.unshift(historyRecord);
-if (localHistory.length > 100) localHistory = localHistory.slice(0, 100);
-}
-localStorage.setItem('cashHistory', JSON.stringify(localHistory));
+                let localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
+                if (editMode) {
+                    // Update existing record
+                    const index = localHistory.findIndex(r => r['Session ID'] === sessionId);
+                    if (index !== -1) {
+                        localHistory[index] = historyRecord;
+                    }
+                } else {
+                    // Add new record
+                    localHistory.unshift(historyRecord);
+                    if (localHistory.length > 100) localHistory = localHistory.slice(0, 100);
+                }
+                localStorage.setItem('cashHistory', JSON.stringify(localHistory));
 
-if ('vibrate' in navigator) {
-navigator.vibrate([100, 50, 100]);
-}
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([100, 50, 100]);
+                }
 
-setTimeout(() => {
-if (confirm('ต้องการล้างข้อมูลเพื่อเริ่มรอบใหม่หรือไม่?')) {
-resetForm();
-}
-}, 2000);
-}
-} else {
-throw new Error('Failed to save');
-}
+                setTimeout(() => {
+                    if (confirm('ต้องการล้างข้อมูลเพื่อเริ่มรอบใหม่หรือไม่?')) {
+                        resetForm();
+                    }
+                }, 2000);
+            }
+        } else {
+            throw new Error('Failed to save');
+        }
 
-} catch (error) {
-console.error('Error:', error);
-btn.innerHTML = originalText;
-btn.disabled = false;
-showToast('บันทึกข้อมูลสำเร็จ (ออฟไลน์) ', 'success');
-}
+    } catch (error) {
+        console.error('Error:', error);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        showToast('บันทึกข้อมูลสำเร็จ (ออฟไลน์) 💾', 'success');
+    }
 }
 
 function saveToLocalStorage() {
-const data = {
-staffName: document.getElementById('staffName').value,
-opening: {},
-closing: {},
-revenue: document.getElementById('revenue').value,
-promptpay: document.getElementById('promptpay').value,
-notes: document.getElementById('notes').value
-};
+    const data = {
+        staffName: document.getElementById('staffName').value,
+        opening: {},
+        closing: {},
+        revenue: document.getElementById('revenue').value,
+        promptpay: document.getElementById('promptpay').value,
+        notes: document.getElementById('notes').value
+    };
 
-document.querySelectorAll('.opening').forEach(input => {
-data.opening[input.dataset.value] = input.value;
-});
+    document.querySelectorAll('.opening').forEach(input => {
+        data.opening[input.dataset.value] = input.value;
+    });
 
-document.querySelectorAll('.closing').forEach(input => {
-data.closing[input.dataset.value] = input.value;
-});
+    document.querySelectorAll('.closing').forEach(input => {
+        data.closing[input.dataset.value] = input.value;
+    });
 
-localStorage.setItem('cashierData', JSON.stringify(data));
+    localStorage.setItem('cashierData', JSON.stringify(data));
 }
 
 function loadFromLocalStorage() {
-const savedData = localStorage.getItem('cashierData');
-if (savedData) {
-const data = JSON.parse(savedData);
+    const savedData = localStorage.getItem('cashierData');
+    if (savedData) {
+        const data = JSON.parse(savedData);
 
-if (data.staffName) {
-document.getElementById('staffName').value = data.staffName;
-}
+        if (data.staffName) {
+            document.getElementById('staffName').value = data.staffName;
+        }
 
-document.querySelectorAll('.opening').forEach(input => {
-input.value = data.opening[input.dataset.value] || '0';
-calculateSubtotal(input);
-});
+        document.querySelectorAll('.opening').forEach(input => {
+            input.value = data.opening[input.dataset.value] || '0';
+            calculateSubtotal(input);
+        });
 
-document.querySelectorAll('.closing').forEach(input => {
-input.value = data.closing[input.dataset.value] || '0';
-calculateSubtotal(input);
-});
+        document.querySelectorAll('.closing').forEach(input => {
+            input.value = data.closing[input.dataset.value] || '0';
+            calculateSubtotal(input);
+        });
 
-document.getElementById('revenue').value = data.revenue || '0';
-document.getElementById('promptpay').value = data.promptpay || '0';
-document.getElementById('notes').value = data.notes || '';
+        document.getElementById('revenue').value = data.revenue || '0';
+        document.getElementById('promptpay').value = data.promptpay || '0';
+        document.getElementById('notes').value = data.notes || '';
 
-calculateOpeningTotal();
-calculateClosingTotal();
-calculateSummary();
-}
+        calculateOpeningTotal();
+        calculateClosingTotal();
+        calculateSummary();
+    }
 }
 
 function resetForm() {
-// Check if in edit mode
-if (editMode) {
-if (!confirm('คุณกำลังอยู่ในโหมดแก้ไข ต้องการยกเลิกและล้างข้อมูลหรือไม่?')) {
-return;
-}
-// Reset edit mode
-editMode = false;
-editingSessionId = null;
-document.getElementById('editModeBanner').classList.remove('active');
-document.getElementById('saveBtn').innerHTML = ' บันทึกข้อมูล';
-} else {
-if (!confirm('คุณแน่ใจหรือไม่ที่จะล้างข้อมูลทั้งหมด?')) {
-return;
-}
-}
+    // Check if in edit mode
+    if (editMode) {
+        if (!confirm('คุณกำลังอยู่ในโหมดแก้ไข ต้องการยกเลิกและล้างข้อมูลหรือไม่?')) {
+            return;
+        }
+        // Reset edit mode
+        editMode = false;
+        editingSessionId = null;
+        document.getElementById('editModeBanner').classList.remove('active');
+        document.getElementById('saveBtn').innerHTML = '💾 บันทึกข้อมูล';
+    } else {
+        if (!confirm('คุณแน่ใจหรือไม่ที่จะล้างข้อมูลทั้งหมด?')) {
+            return;
+        }
+    }
 
-if ('vibrate' in navigator) {
-navigator.vibrate(50);
-}
+    if ('vibrate' in navigator) {
+        navigator.vibrate(50);
+    }
 
-document.querySelectorAll('input[type="number"]').forEach(input => {
-input.style.transition = 'opacity 0.3s';
-input.style.opacity = '0.5';
-setTimeout(() => {
-input.value = '0';
-input.style.opacity = '1';
-}, 300);
-});
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.style.transition = 'opacity 0.3s';
+        input.style.opacity = '0.5';
+        setTimeout(() => {
+            input.value = '0';
+            input.style.opacity = '1';
+        }, 300);
+    });
 
-document.getElementById('notes').value = '';
+    document.getElementById('notes').value = '';
 
-setTimeout(() => {
-document.querySelectorAll('.subtotal').forEach(span => {
-span.textContent = '0';
-});
-calculateOpeningTotal();
-calculateClosingTotal();
-calculateSummary();
-localStorage.removeItem('cashierData');
-showToast('ล้างข้อมูลเรียบร้อย ', 'success');
-}, 400);
+    setTimeout(() => {
+        document.querySelectorAll('.subtotal').forEach(span => {
+            span.textContent = '0';
+        });
+        calculateOpeningTotal();
+        calculateClosingTotal();
+        calculateSummary();
+        localStorage.removeItem('cashierData');
+        showToast('ล้างข้อมูลเรียบร้อย 🔄', 'success');
+    }, 400);
 }
 
 function showToast(message, type) {
-const toast = document.getElementById('toast');
-toast.textContent = message;
-toast.className = toast ${type};
-toast.style.display = 'block';
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = `toast ${type}`;
+    toast.style.display = 'block';
 
-setTimeout(() => {
-toast.style.animation = 'slideOutRight 0.5s ease';
-setTimeout(() => {
-toast.style.display = 'none';
-toast.style.animation = '';
-}, 500);
-}, 3000);
+    setTimeout(() => {
+        toast.style.animation = 'slideOutRight 0.5s ease';
+        setTimeout(() => {
+            toast.style.display = 'none';
+            toast.style.animation = '';
+        }, 500);
+    }, 3000);
 }
 
 // Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
-if (window.innerWidth > 768) {
-if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-e.preventDefault();
-saveToGoogleSheets();
-}
-if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
-e.preventDefault();
-resetForm();
-}
-}
+    if (window.innerWidth > 768) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+            e.preventDefault();
+            saveToGoogleSheets();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+            e.preventDefault();
+            resetForm();
+        }
+    }
 });
 
 window.addEventListener('orientationchange', function() {
-setTimeout(() => {
-window.scrollTo(0, 0);
-}, 300);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 300);
 });
 </script>
 </body>
