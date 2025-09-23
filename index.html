@@ -208,18 +208,18 @@ body {padding: 20px;}
 </head>
 <body>
 <div class="container">
-<h1>🏪 ระบบตรวจสอบลิ้นชักเงินสด</h1>
+<h1> ระบบตรวจสอบลิ้นชักเงินสด</h1>
 <div class="date-info">วันที่: <span id="currentDate"></span></div>
 
 <!-- Edit Mode Banner -->
 <div class="edit-mode-banner" id="editModeBanner">
-🔧 กำลังแก้ไขข้อมูล - Session: <span id="editingSessionId"></span>
+ กำลังแก้ไขข้อมูล - Session: <span id="editingSessionId"></span>
 </div>
 
 <!-- Navigation Tabs -->
 <div class="nav-tabs">
-<button class="nav-tab active" onclick="switchTab('input-tab')">📝 บันทึกข้อมูล</button>
-<button class="nav-tab" onclick="switchTab('history-tab')">📊 ประวัติการบันทึก</button>
+<button class="nav-tab active" onclick="switchTab('input-tab')"> บันทึกข้อมูล</button>
+<button class="nav-tab" onclick="switchTab('history-tab')"> ประวัติการบันทึก</button>
 </div>
 
 <!-- Input Tab Content -->
@@ -227,13 +227,13 @@ body {padding: 20px;}
 <!-- Staff Name Input -->
 <div class="staff-section">
 <div class="staff-input">
-<label for="staffName">👤 ชื่อพนักงาน:</label>
+<label for="staffName"> ชื่อพนักงาน:</label>
 <input type="text" id="staffName" placeholder="กรุณาใส่ชื่อพนักงาน" value="Supanut Chailungka">
 </div>
 </div>
 
 <div class="cash-section">
-<h2>💵 เงินสดเปิดกะ (Opening Cash)</h2>
+<h2> เงินสดเปิดกะ (Opening Cash)</h2>
 <div class="denomination-grid">
 <div class="bills-section">
 <h3>ธนบัตร</h3>
@@ -293,7 +293,7 @@ body {padding: 20px;}
 </div>
 
 <div class="transaction-section">
-<h2>💳 รายการระหว่างวัน</h2>
+<h2> รายการระหว่างวัน</h2>
 <div class="input-group">
 <label>ยอดขายทั้งหมด (Revenue):</label>
 <input type="number" inputmode="decimal" id="revenue" min="0" step="0.01" value="0">
@@ -303,13 +303,13 @@ body {padding: 20px;}
 <input type="number" inputmode="decimal" id="promptpay" min="0" step="0.01" value="0">
 </div>
 <div class="input-group">
-<label>📝 หมายเหตุ (Notes):</label>
+<label> หมายเหตุ (Notes):</label>
 <textarea id="notes" rows="3" placeholder="เพิ่มหมายเหตุ (ถ้ามี)"></textarea>
 </div>
 </div>
 
 <div class="cash-section">
-<h2>💰 เงินสดปิดกะ (Closing Cash)</h2>
+<h2> เงินสดปิดกะ (Closing Cash)</h2>
 <div class="denomination-grid">
 <div class="bills-section">
 <h3>ธนบัตร</h3>
@@ -369,7 +369,7 @@ body {padding: 20px;}
 </div>
 
 <div class="summary-section">
-<h2>📊 สรุปผล</h2>
+<h2> สรุปผล</h2>
 <div class="summary-grid">
 <div class="summary-item">
 <label>เงินสดที่ควรมี:</label>
@@ -380,7 +380,7 @@ body {padding: 20px;}
 <span id="actualCash">0</span> บาท
 </div>
 <div class="summary-item difference exact" id="differenceBox">
-<div class="difference-status" id="statusIcon">✅</div>
+<div class="difference-status" id="statusIcon"></div>
 <label>ผลต่าง:</label>
 <span id="difference">0</span> บาท
 <div id="differenceText" style="margin-top: 10px; font-size: 0.9rem;"></div>
@@ -389,14 +389,14 @@ body {padding: 20px;}
 </div>
 
 <div class="button-section">
-<button id="saveBtn" class="btn-primary">💾 บันทึกข้อมูล</button>
-<button id="resetBtn" class="btn-secondary">🔄 ล้างข้อมูล</button>
+<button id="saveBtn" class="btn-primary"> บันทึกข้อมูล</button>
+<button id="resetBtn" class="btn-secondary"> ล้างข้อมูล</button>
 </div>
 </div>
 
 <!-- History Tab Content -->
 <div id="history-tab" class="tab-content">
-<h2>📊 ประวัติการบันทึกข้อมูล</h2>
+<h2> ประวัติการบันทึกข้อมูล</h2>
 
 <!-- History Controls -->
 <div class="history-controls">
@@ -408,7 +408,7 @@ body {padding: 20px;}
 <option value="เงินขาด">เงินขาด</option>
 </select>
 <input type="text" id="filterStaff" placeholder="ชื่อพนักงาน">
-<button class="btn-refresh" onclick="loadHistoryData()">🔄 รีเฟรช</button>
+<button class="btn-refresh" onclick="loadHistoryData()"> รีเฟรช</button>
 </div>
 
 <!-- Statistics Cards -->
@@ -452,7 +452,7 @@ body {padding: 20px;}
 </tbody>
 </table>
 <div id="emptyState" class="empty-state" style="display: none;">
-<div class="empty-state-icon">📋</div>
+<div class="empty-state-icon"></div>
 <div class="empty-state-text">ยังไม่มีข้อมูลการบันทึก</div>
 </div>
 </div>
@@ -520,8 +520,8 @@ body {padding: 20px;}
 </form>
 </div>
 <div class="modal-footer">
-<button class="btn-save-edit" onclick="saveEdit()">💾 บันทึกการแก้ไข</button>
-<button class="btn-cancel" onclick="closeEditModal()">❌ ยกเลิก</button>
+<button class="btn-save-edit" onclick="saveEdit()"> บันทึกการแก้ไข</button>
+<button class="btn-cancel" onclick="closeEditModal()"> ยกเลิก</button>
 </div>
 </div>
 </div>
@@ -529,7 +529,7 @@ body {padding: 20px;}
 <!-- Delete Confirmation Modal -->
 <div id="deleteModal" class="modal">
 <div class="confirm-dialog">
-<div class="confirm-icon"⚠️</div>
+<div class="confirm-icon"</div>
 <div class="confirm-message">คุณแน่ใจหรือไม่ที่จะลบข้อมูลนี้?</div>
 <div class="confirm-buttons">
 <button class="btn-confirm-yes" onclick="confirmDelete()">ลบ</button>
@@ -542,7 +542,8 @@ body {padding: 20px;}
 
 <script>
 // Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuVwKg-DAWrQVNFLBqnxFCxuMbElUoJPXLL7IeqJNZY3iuIvavfEHcsmWxMiAbWUVN/exec';
+const GOOGLE_SCRIPT_URL = '<https://script.google.com/macros/s/AKfycbxETqaXBVCdIbXheDtXCBNK0UAe0m6G8u1WvFvmtTwtehW0hBFvrfoITTrMA5__mzYB/exec>';
+
 
 // Global variables
 let historyData = [];
@@ -688,7 +689,7 @@ tableBody.innerHTML = data.map(row => {
 const statusClass = row['Status'] === 'เงินเกิน' ? 'over' :
 row['Status'] === 'เงินขาด' ? 'under' : 'exact';
 
-return             <tr onclick="showDetails('${row['Session ID']}')">                 <td>${row['Date'] || ''}</td>                 <td>${row['Time'] || ''}</td>                 <td>${row['Staff Name'] || ''}</td>                 <td>${formatCurrency(row['Opening Total'])}</td>                 <td>${formatCurrency(row['Revenue'])}</td>                 <td>${formatCurrency(row['Closing Total'])}</td>                 <td>${formatCurrency(row['Difference'])}</td>                 <td><span class="status-badge ${statusClass}">${row['Status'] || ''}</span></td>                 <td>                     <div class="action-buttons">                         <button class="btn-action btn-view" onclick="event.stopPropagation(); showDetails('${row['Session ID']}')">👁️</button>                         <button class="btn-action btn-edit" onclick="event.stopPropagation(); editRecord('${row['Session ID']}')">✏️</button>                         <button class="btn-action btn-delete" onclick="event.stopPropagation(); deleteRecord('${row['Session ID']}')">🗑️</button>                     </div>                 </td>             </tr>        ;
+return             <tr onclick="showDetails('${row['Session ID']}')">                 <td>${row['Date'] || ''}</td>                 <td>${row['Time'] || ''}</td>                 <td>${row['Staff Name'] || ''}</td>                 <td>${formatCurrency(row['Opening Total'])}</td>                 <td>${formatCurrency(row['Revenue'])}</td>                 <td>${formatCurrency(row['Closing Total'])}</td>                 <td>${formatCurrency(row['Difference'])}</td>                 <td><span class="status-badge ${statusClass}">${row['Status'] || ''}</span></td>                 <td>                     <div class="action-buttons">                         <button class="btn-action btn-view" onclick="event.stopPropagation(); showDetails('${row['Session ID']}')"></button>                         <button class="btn-action btn-edit" onclick="event.stopPropagation(); editRecord('${row['Session ID']}')"></button>                         <button class="btn-action btn-delete" onclick="event.stopPropagation(); deleteRecord('${row['Session ID']}')"></button>                     </div>                 </td>             </tr>        ;
 }).join('');
 }
 
@@ -767,7 +768,7 @@ calculateClosingTotal();
 calculateSummary();
 
 // Change save button text
-document.getElementById('saveBtn').innerHTML = '💾 อัพเดทข้อมูล';
+document.getElementById('saveBtn').innerHTML = ' อัพเดทข้อมูล';
 
 // Scroll to top
 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -827,13 +828,13 @@ method: 'POST',
 body: formData
 });
 
-showToast('อัพเดทข้อมูลสำเร็จ! ✅', 'success');
+showToast('อัพเดทข้อมูลสำเร็จ! ', 'success');
 closeEditModal();
 loadHistoryData();
 
 } catch (error) {
 console.error('Error updating record:', error);
-showToast('เกิดข้อผิดพลาดในการอัพเดท ❌', 'error');
+showToast('เกิดข้อผิดพลาดในการอัพเดท ', 'error');
 }
 }
 
@@ -857,7 +858,7 @@ const response = await fetch(${GOOGLE_SCRIPT_URL}?action=delete&sessionId=${dele
 const result = await response.json();
 
 if (result.status === 'success') {
-showToast('ลบข้อมูลสำเร็จ! ✅', 'success');
+showToast('ลบข้อมูลสำเร็จ! ', 'success');
 
 // Remove from local history too
 let localHistory = JSON.parse(localStorage.getItem('cashHistory') || '[]');
@@ -867,11 +868,11 @@ localStorage.setItem('cashHistory', JSON.stringify(localHistory));
 closeDeleteModal();
 loadHistoryData();
 } else {
-showToast('เกิดข้อผิดพลาดในการลบ ❌', 'error');
+showToast('เกิดข้อผิดพลาดในการลบ ', 'error');
 }
 } catch (error) {
 console.error('Error deleting record:', error);
-showToast('เกิดข้อผิดพลาดในการลบ ❌', 'error');
+showToast('เกิดข้อผิดพลาดในการลบ ', 'error');
 }
 }
 
@@ -1045,17 +1046,17 @@ diffBox.classList.remove('over', 'under', 'exact');
 
 if (difference > 0) {
 diffBox.classList.add('over');
-statusIcon.innerHTML = '📈';
+statusIcon.innerHTML = '';
 statusIcon.style.background = '#43e97b';
 diffText.textContent = 'เงินเกิน';
 } else if (difference < 0) {
 diffBox.classList.add('under');
-statusIcon.innerHTML = '📉';
+statusIcon.innerHTML = '';
 statusIcon.style.background = '#f5576c';
 diffText.textContent = 'เงินขาด';
 } else {
 diffBox.classList.add('exact');
-statusIcon.innerHTML = '✅';
+statusIcon.innerHTML = '';
 statusIcon.style.background = '#667eea';
 diffText.textContent = 'พอดี';
 }
@@ -1096,7 +1097,7 @@ const originalText = btn.innerHTML;
 // Validation
 const staffName = document.getElementById('staffName').value.trim();
 if (!staffName) {
-showToast('กรุณาใส่ชื่อพนักงาน ❌', 'error');
+showToast('กรุณาใส่ชื่อพนักงาน ', 'error');
 document.getElementById('staffName').focus();
 return;
 }
@@ -1158,20 +1159,20 @@ btn.innerHTML = originalText;
 btn.disabled = false;
 
 if (editMode) {
-showToast('อัพเดทข้อมูลสำเร็จ! ✅', 'success');
+showToast('อัพเดทข้อมูลสำเร็จ! ', 'success');
 
 // Reset edit mode
 editMode = false;
 editingSessionId = null;
 document.getElementById('editModeBanner').classList.remove('active');
-document.getElementById('saveBtn').innerHTML = '💾 บันทึกข้อมูล';
+document.getElementById('saveBtn').innerHTML = ' บันทึกข้อมูล';
 
 // Switch back to history tab
 setTimeout(() => {
 switchTab('history-tab');
 }, 1500);
 } else {
-showToast('บันทึกข้อมูลสำเร็จ! ✅', 'success');
+showToast('บันทึกข้อมูลสำเร็จ! ', 'success');
 
 // Save to local history
 const historyRecord = {
@@ -1222,7 +1223,7 @@ throw new Error('Failed to save');
 console.error('Error:', error);
 btn.innerHTML = originalText;
 btn.disabled = false;
-showToast('บันทึกข้อมูลสำเร็จ (ออฟไลน์) ✅', 'success');
+showToast('บันทึกข้อมูลสำเร็จ (ออฟไลน์) ', 'success');
 }
 }
 
@@ -1286,7 +1287,7 @@ return;
 editMode = false;
 editingSessionId = null;
 document.getElementById('editModeBanner').classList.remove('active');
-document.getElementById('saveBtn').innerHTML = '💾 บันทึกข้อมูล';
+document.getElementById('saveBtn').innerHTML = ' บันทึกข้อมูล';
 } else {
 if (!confirm('คุณแน่ใจหรือไม่ที่จะล้างข้อมูลทั้งหมด?')) {
 return;
@@ -1316,7 +1317,7 @@ calculateOpeningTotal();
 calculateClosingTotal();
 calculateSummary();
 localStorage.removeItem('cashierData');
-showToast('ล้างข้อมูลเรียบร้อย 🔄', 'success');
+showToast('ล้างข้อมูลเรียบร้อย ', 'success');
 }, 400);
 }
 
