@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการทำรายการ - Transaction History</title>
+    <link href="<https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap>" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions-styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h2>📋 ประวัติการทำรายการ</h2>
+            <div class="header-actions">
+                <span class="badge" id="currentDate"></span>
+                <a href="index.html" class="btn btn-link">💰 กลับหน้าหลัก</a>
+            </div>
+        </header>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="container">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>วันที่:</label>
+                        <input type="date" id="filterDate" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>กะ:</label>
+                        <select id="filterShift" class="filter-input">
+                            <option value="">ทั้งหมด</option>
+                            <option value="morning">กะเช้า</option>
+                            <option value="afternoon">กะบ่าย</option>
+                            <option value="night">กะดึก</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>ผู้ทำรายการ:</label>
+                        <input type="text" id="filterCashier" class="filter-input" placeholder="ชื่อพนักงาน">
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn btn-primary" onclick="filterTransactions()">🔍 ค้นหา</button>
+                        <button class="btn btn-secondary" onclick="clearFilters()">❌ ล้างตัวกรอง</button>
+                        <button class="btn btn-danger" onclick="clearAllTransactions()">🗑️ ลบทั้งหมด</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <div class="stat-label">รายการทั้งหมด</div>
+                            <div class="stat-value" id="totalTransactions">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-label">รายรับรวม</div>
+                            <div class="stat-value" id="totalRevenue">฿0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📱</div>
+                        <div class="stat-content">
+                            <div class="stat-label">พร้อมเพย์รวม</div>
+                            <div class="stat-value" id="totalPromptpay">฿0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">ยอดถูกต้อง</div>
+                            <div class="stat-value" id="perfectCount">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="transactions-section">
+            <div class="container">
+                <div class="table-container">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>วันที่/เวลา</th>
+                                <th>กะ</th>
+                                <th>ผู้ทำรายการ</th>
+                                <th>เงินยกมา</th>
+                                <th>รายรับ</th>
+                                <th>พร้อมเพย์</th>
+                                <th>เงินปิดกะ</th>
+                                <th>ผลต่าง</th>
+                                <th>สถานะ</th>
+                                <th>การกระทำ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsTableBody">
+                            <!-- Transactions will be loaded here -->
+                        </tbody>
+                    </table>
+                    <div id="noDataMessage" class="no-data-message" style="display: none;">
+                        <p>📭 ไม่มีข้อมูลรายการ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✏️ แก้ไขรายการ</h3>
+                <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="editTransactionId">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>ผู้ทำรายการ:</label>
+                            <input type="text" id="editCashier" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>กะ:</label>
+                            <select id="editShift" class="form-input">
+                                <option value="morning">กะเช้า</option>
+                                <option value="afternoon">กะบ่าย</option>
+                                <option value="night">กะดึก</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>รายรับ:</label>
+                            <input type="number" id="editRevenue" class="form-input" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label>พร้อมเพย์:</label>
+                            <input type="number" id="editPromptpay" class="form-input" step="0.01">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>หมายเหตุ:</label>
+                            <input type="text" id="editNote" class="form-input">
+                        </div>
+                    </div>
+
+                    <h4>เงินสดยกมา</h4>
+                    <div class="denomination-grid">
+                        <div class="denom-input">
+                            <label>฿1,000:</label>
+                            <input type="number" id="editOpen1000" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿500:</label>
+                            <input type="number" id="editOpen500" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿100:</label>
+                            <input type="number" id="editOpen100" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿50:</label>
+                            <input type="number" id="editOpen50" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿20:</label>
+                            <input type="number" id="editOpen20" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿10:</label>
+                            <input type="number" id="editOpen10" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿5:</label>
+                            <input type="number" id="editOpen5" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿1:</label>
+                            <input type="number" id="editOpen1" class="form-input-small" min="0">
+                        </div>
+                    </div>
+
+                    <h4>เงินสดปิดกะ</h4>
+                    <div class="denomination-grid">
+                        <div class="denom-input">
+                            <label>฿1,000:</label>
+                            <input type="number" id="editClose1000" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿500:</label>
+                            <input type="number" id="editClose500" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿100:</label>
+                            <input type="number" id="editClose100" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿50:</label>
+                            <input type="number" id="editClose50" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿20:</label>
+                            <input type="number" id="editClose20" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿10:</label>
+                            <input type="number" id="editClose10" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿5:</label>
+                            <input type="number" id="editClose5" class="form-input-small" min="0">
+                        </div>
+                        <div class="denom-input">
+                            <label>฿1:</label>
+                            <input type="number" id="editClose1" class="form-input-small" min="0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="saveEditedTransaction()">💾 บันทึกการแก้ไข</button>
+                <button class="btn btn-secondary" onclick="closeEditModal()">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="transaction-manager.js"></script>
+    <script src="transactions-page.js"></script>
+</body>
+</html>
