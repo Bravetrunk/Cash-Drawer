@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบตรวจสอบลิ้นชักเงินสด - Cash Drawer Check</title>
+    <link href="<https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap>" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h2>💰 ระบบตรวจสอบลิ้นชักเงินสด</h2>
+            <span class="badge" id="currentDate"></span>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-grid">
+            <!-- Left Panel - Opening Cash -->
+            <div class="panel panel-opening">
+                <h4 class="panel-title">📥 เงินสดยกมา</h4>
+                <div class="cash-grid">
+                    <div class="cash-row">
+                        <span class="denomination">฿1,000</span>
+                        <input type="number" class="input-compact" id="open-1000" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿500</span>
+                        <input type="number" class="input-compact" id="open-500" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿100</span>
+                        <input type="number" class="input-compact" id="open-100" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿50</span>
+                        <input type="number" class="input-compact" id="open-50" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿20</span>
+                        <input type="number" class="input-compact" id="open-20" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿10</span>
+                        <input type="number" class="input-compact" id="open-10" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿5</span>
+                        <input type="number" class="input-compact" id="open-5" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿1</span>
+                        <input type="number" class="input-compact" id="open-1" min="0" placeholder="0">
+                    </div>
+                </div>
+                <div class="total-box">
+                    <span>รวม:</span>
+                    <strong id="openingTotal">฿0</strong>
+                </div>
+            </div>
+
+            <!-- Center Panel - Transactions & Summary -->
+            <div class="panel panel-center">
+                <div class="transaction-section">
+                    <h4 class="panel-title">💳 รายการเงิน</h4>
+                    <div class="transaction-grid">
+                        <div class="transaction-row">
+                            <label>💵 รายรับ</label>
+                            <input type="number" class="input-money" id="revenue" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                        <div class="transaction-row">
+                            <label>📱 พร้อมเพย์</label>
+                            <input type="number" class="input-money" id="promptpay" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculation Summary -->
+                <div class="summary-section glass">
+                    <h4>สูตรคำนวณ</h4>
+                    <div class="formula">
+                        <div class="formula-item">
+                            <span class="formula-label">เงินยกมา</span>
+                            <span class="formula-value" id="summaryOpening">฿0</span>
+                        </div>
+                        <div class="formula-operator">+</div>
+                        <div class="formula-item">
+                            <span class="formula-label">รายรับ</span>
+                            <span class="formula-value" id="summaryRevenue">฿0</span>
+                        </div>
+                        <div class="formula-operator">−</div>
+                        <div class="formula-item">
+                            <span class="formula-label">พร้อมเพย์</span>
+                            <span class="formula-value" id="summaryPromptpay">฿0</span>
+                        </div>
+                        <div class="formula-operator">=</div>
+                        <div class="formula-item formula-result">
+                            <span class="formula-label">ควรมี</span>
+                            <span class="formula-value" id="expectedCash">฿0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Comparison -->
+                <div class="result-section">
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="result-label">เงินที่นับได้</span>
+                            <h3 class="result-amount" id="actualAmount">฿0</h3>
+                        </div>
+                        <div class="result-item" id="differenceBox">
+                            <span class="result-label">ผลต่าง</span>
+                            <h3 class="result-amount" id="resultDifference">฿0</h3>
+                            <span class="status-text" id="differenceStatus"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="calculateAll()">คำนวณ</button>
+                    <button class="btn btn-secondary" onclick="clearAll()">ล้าง</button>
+                    <button class="btn btn-ghost" onclick="printReport()">พิมพ์</button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Closing Cash -->
+            <div class="panel panel-closing">
+                <h4 class="panel-title">📤 เงินสดปิดกะ</h4>
+                <div class="cash-grid">
+                    <div class="cash-row">
+                        <span class="denomination">฿1,000</span>
+                        <input type="number" class="input-compact" id="close-1000" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿500</span>
+                        <input type="number" class="input-compact" id="close-500" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿100</span>
+                        <input type="number" class="input-compact" id="close-100" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿50</span>
+                        <input type="number" class="input-compact" id="close-50" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿20</span>
+                        <input type="number" class="input-compact" id="close-20" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿10</span>
+                        <input type="number" class="input-compact" id="close-10" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿5</span>
+                        <input type="number" class="input-compact" id="close-5" min="0" placeholder="0">
+                    </div>
+                    <div class="cash-row">
+                        <span class="denomination">฿1</span>
+                        <input type="number" class="input-compact" id="close-1" min="0" placeholder="0">
+                    </div>
+                </div>
+                <div class="total-box">
+                    <span>รวม:</span>
+                    <strong id="closingTotal">฿0</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
