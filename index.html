@@ -6,13 +6,17 @@
     <title>ระบบตรวจสอบลิ้นชักเงินสด - Cash Drawer Check</title>
     <link href="<https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap>" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
 </head>
 <body>
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
             <h2>💰 ระบบตรวจสอบลิ้นชักเงินสด</h2>
-            <span class="badge" id="currentDate"></span>
+            <div class="header-actions">
+                <span class="badge" id="currentDate"></span>
+                <a href="transactions.html" class="btn btn-link">📋 ประวัติการทำรายการ</a>
+            </div>
         </header>
 
         <!-- Main Content -->
@@ -62,6 +66,29 @@
 
             <!-- Center Panel - Transactions & Summary -->
             <div class="panel panel-center">
+                <!-- Transaction Info Section -->
+                <div class="transaction-info-section">
+                    <h4 class="panel-title">📝 ข้อมูลรายการ</h4>
+                    <div class="transaction-meta">
+                        <div class="input-group-inline">
+                            <label>ผู้ทำรายการ:</label>
+                            <input type="text" class="input-text" id="cashierName" placeholder="ชื่อพนักงาน">
+                        </div>
+                        <div class="input-group-inline">
+                            <label>กะ:</label>
+                            <select class="input-select" id="shiftSelect">
+                                <option value="morning">กะเช้า</option>
+                                <option value="afternoon">กะบ่าย</option>
+                                <option value="night">กะดึก</option>
+                            </select>
+                        </div>
+                        <div class="input-group-inline">
+                            <label>หมายเหตุ:</label>
+                            <input type="text" class="input-text" id="transactionNote" placeholder="หมายเหตุ (ถ้ามี)">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="transaction-section">
                     <h4 class="panel-title">💳 รายการเงิน</h4>
                     <div class="transaction-grid">
@@ -119,9 +146,14 @@
 
                 <!-- Action Buttons -->
                 <div class="button-group">
-                    <button class="btn btn-primary" onclick="calculateAll()">คำนวณ</button>
-                    <button class="btn btn-secondary" onclick="clearAll()">ล้าง</button>
-                    <button class="btn btn-ghost" onclick="printReport()">พิมพ์</button>
+                    <button class="btn btn-primary" onclick="saveTransaction()">💾 บันทึก</button>
+                    <button class="btn btn-secondary" onclick="clearAll()">🗑️ ล้าง</button>
+                    <button class="btn btn-ghost" onclick="printReport()">🖨️ พิมพ์</button>
+                </div>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    ✅ บันทึกรายการสำเร็จ!
                 </div>
             </div>
 
@@ -171,5 +203,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="transaction-manager.js"></script>
 </body>
 </html>
