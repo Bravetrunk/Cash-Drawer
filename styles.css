@@ -47,7 +47,7 @@
 
 body {
     font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-size: 22px;  /* Increased from 14px (57% increase) */
     line-height: 1.5;
     color: var(--charcoal);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -75,7 +75,7 @@ body {
 }
 
 .app-header h2 {
-    font-size: 1.25rem;
+    font-size: 2rem;  /* Increased from 1.25rem (60% increase) */
     font-weight: 600;
     color: var(--charcoal);
 }
@@ -84,7 +84,7 @@ body {
     padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--pastel-yellow);
     border-radius: var(--radius-full);
-    font-size: 0.75rem;
+    font-size: 1.2rem;  /* Increased from 0.75rem (60% increase) */
     font-weight: 500;
 }
 
@@ -94,7 +94,7 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);  /* Adjusted for larger header */
     overflow: hidden;
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .panel-title {
-    font-size: 1rem;
+    font-size: 1.6rem;  /* Increased from 1rem (60% increase) */
     font-weight: 600;
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
@@ -139,7 +139,7 @@ body {
 
 .cash-row {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr;  /* Increased from 80px */
     gap: var(--spacing-sm);
     align-items: center;
 }
@@ -147,7 +147,7 @@ body {
 .denomination {
     font-weight: 500;
     color: var(--dark-gray);
-    font-size: 0.875rem;
+    font-size: 1.4rem;  /* Increased from 0.875rem (60% increase) */
     text-align: right;
 }
 
@@ -155,7 +155,7 @@ body {
     padding: var(--spacing-xs) var(--spacing-sm);
     border: 2px solid var(--light-gray);
     border-radius: var(--radius-sm);
-    font-size: 0.875rem;
+    font-size: 1.5rem;  /* Increased from 0.875rem (71% increase) */
     font-family: 'Kanit', sans-serif;
     transition: all 0.2s ease;
     width: 100%;
@@ -176,11 +176,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.6rem;  /* Increased from 1rem (60% increase) */
 }
 
 .total-box strong {
-    font-size: 1.25rem;
+    font-size: 2.2rem;  /* Increased from 1.25rem (76% increase) */
     color: var(--charcoal);
 }
 
@@ -197,7 +197,7 @@ body {
 
 .transaction-row {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 150px 1fr;  /* Increased from 120px */
     gap: var(--spacing-md);
     align-items: center;
 }
@@ -205,14 +205,14 @@ body {
 .transaction-row label {
     font-weight: 500;
     color: var(--dark-gray);
-    font-size: 0.875rem;
+    font-size: 1.4rem;  /* Increased from 0.875rem (60% increase) */
 }
 
 .input-money {
     padding: var(--spacing-sm);
     border: 2px solid var(--light-gray);
     border-radius: var(--radius-sm);
-    font-size: 1rem;
+    font-size: 1.8rem;  /* Increased from 1rem (80% increase) */
     font-family: 'Kanit', sans-serif;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -231,7 +231,7 @@ body {
 }
 
 .summary-section h4 {
-    font-size: 0.875rem;
+    font-size: 1.4rem;  /* Increased from 0.875rem (60% increase) */
     margin-bottom: var(--spacing-sm);
     color: var(--gray);
 }
@@ -257,20 +257,20 @@ body {
 
 .formula-label {
     display: block;
-    font-size: 0.625rem;
+    font-size: 1rem;  /* Increased from 0.625rem (60% increase) */
     color: var(--gray);
     margin-bottom: 2px;
 }
 
 .formula-value {
     display: block;
-    font-size: 0.875rem;
+    font-size: 1.5rem;  /* Increased from 0.875rem (71% increase) */
     font-weight: 600;
     color: var(--charcoal);
 }
 
 .formula-operator {
-    font-size: 1rem;
+    font-size: 1.8rem;  /* Increased from 1rem (80% increase) */
     font-weight: 600;
     color: var(--gray);
     padding: 0 var(--spacing-xs);
@@ -302,13 +302,13 @@ body {
 
 .result-label {
     display: block;
-    font-size: 0.75rem;
+    font-size: 1.2rem;  /* Increased from 0.75rem (60% increase) */
     color: var(--gray);
     margin-bottom: var(--spacing-xs);
 }
 
 .result-amount {
-    font-size: 1.5rem;
+    font-size: 2.5rem;  /* Increased from 1.5rem (67% increase) */
     font-weight: 600;
     color: var(--charcoal);
     margin: 0;
@@ -316,7 +316,7 @@ body {
 
 .status-text {
     display: block;
-    font-size: 0.75rem;
+    font-size: 1.2rem;  /* Increased from 0.75rem (60% increase) */
     font-weight: 500;
     margin-top: var(--spacing-xs);
 }
@@ -357,7 +357,7 @@ body {
     border: none;
     border-radius: var(--radius-md);
     font-family: 'Kanit', sans-serif;
-    font-size: 0.875rem;
+    font-size: 1.5rem;  /* Increased from 0.875rem (71% increase) */
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -393,7 +393,29 @@ body {
     background: var(--light-gray);
 }
 
-/* Responsive Design */
+/* Responsive Design - Adjusted for larger fonts */
+@media (max-width: 1400px) {
+    body {
+        font-size: 18px;  /* Slightly smaller on medium screens */
+    }
+
+    .panel-title {
+        font-size: 1.4rem;
+    }
+
+    .denomination {
+        font-size: 1.2rem;
+    }
+
+    .input-compact {
+        font-size: 1.3rem;
+    }
+
+    .result-amount {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 1200px) {
     .main-grid {
         grid-template-columns: 1fr;
@@ -412,12 +434,32 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        font-size: 16px;  /* Back to more reasonable size on mobile */
+    }
+
+    .app-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .panel-title {
+        font-size: 1.2rem;
+    }
+
+    .denomination {
+        font-size: 1rem;
+    }
+
+    .input-compact {
+        font-size: 1.1rem;
+    }
+
     .cash-row {
-        grid-template-columns: 60px 1fr;
+        grid-template-columns: 70px 1fr;
     }
 
     .transaction-row {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 100px 1fr;
     }
 
     .formula {
@@ -427,12 +469,21 @@ body {
     .result-grid {
         grid-template-columns: 1fr;
     }
+
+    .result-amount {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+    }
 }
 
 /* Print Styles */
 @media print {
     body {
         background: white;
+        font-size: 14px;  /* Normal size for printing */
     }
 
     .app-header {
